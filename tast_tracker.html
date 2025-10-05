@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Tracker</title>
-    ,<link rel="stylesheet" href="./task_tracker.css">
+    <link rel="stylesheet" href="task_tracker.css">
 </head>
 <body>
-    <h1>Task Tracker</h1>
-    
-    <div class="task-input">
-        <input type="text" placeholder="Enter Task" id="taskInput">
-        <button id="addTaskBtn">Add</button> 
+
+    <div class="container">
+        <h1 class="header-title">Task Tracker</h1>
+
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Enter Task">
+            <button id="add-button">Add</button>
+        </div>
+
+        <ul id="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="task-item__checkbox" onclick="toggleComplete(this)">
+                <span class="task-item__text">Do my assignment</span>
+                <div class="task-item__buttons">
+                    <button class="task-item__button task-item__complete" onclick="toggleComplete(this.closest('.task-item').querySelector('.task-item__checkbox'))">Complete</button>
+                    <button class="task-item__button task-item__edit" onclick="editTask(this)">Edit</button>
+                    <button class="task-item__button task-item__delete" onclick="deleteTask(this)">Delete</button>
+                </div>
+            </li>
+        </ul>
     </div>
 
-    <div id="taskList" class="task-list">
-            <div class="task-item">
-                <div>
-                    <input type="checkbox">
-                    <span>Do my assignment</span>
-                </div>
-                <div>
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
-                </div>
-            </div>
-        </div>
-    
-    <!-- <div id="taskList" class="task-list"></div> -->
     <script src="task_tracker.js"></script>
-
-    </body>
+</body>
 </html>

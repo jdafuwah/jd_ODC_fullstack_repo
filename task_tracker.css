@@ -1,86 +1,125 @@
-body{
-    background-color: #f4f6f8;
+/* --- Basic Setup --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(226, 226, 238);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-h1{
-    Color: blueviolet;
-
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
 }
 
-.task-input{
+.container {
+    background-color: rgb(194, 182, 206);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+
+.header-title {
+    color: blueviolet; 
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-area {
     display: flex;
     gap: 10px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
+    margin-bottom: 20px;
 }
 
-.task-input input{
-    flex: 1;
+#task-input {
+    flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
-}
-
-.task-input input:focus{
-    border-color: blueviolet;
-}
-
-.task-input button{
-    background: blueviolet;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.task-list{
-    margin-top: 20px;
-    width: 100%;
-    max-width:400px;
-}
-
-.task-item{
-    background-color: white;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.task-item span{
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 16px;
-
 }
 
-.task-item span.completed{
+#add-button {
+    background-color: #0425b9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-button:hover {
+    background-color: #6a1ba0;
+}
+
+/* --- Task List Styles --- */
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item__text {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: text-decoration 0.3s, color 0.3s;
+}
+
+/* Style for a completed task */
+.task-item.completed .task-item__text {
     text-decoration: line-through;
-    color: #aaa;
+    color: #a0a0a0;
 }
 
-task-item button{
-   border: none;
-   padding: 5px 10px;
-   border-radius: 5px;
-   cursor: pointer;
-   font-size: 14px;
-   margin-left: 5px;
+.task-item__checkbox {
+    /* Style the checkbox here if needed, or rely on browser default */
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
-.task-item .edit{
-    background-color: #f0ad4e;
+/* --- Buttons (Matching your image styles) --- */
+.task-item__buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.task-item__button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
     color: white;
+    transition: opacity 0.2s;
 }
 
-.task-item .delete{
-    background-color: #d9534f;
-    color: white;
+.task-item__button:hover {
+    opacity: 0.8;
+}
+
+/* New Complete Button Style */
+.task-item__complete {
+    background-color: #057c05; 
+}
+
+/* Edit Button Style (Orange/Amber from your image) */
+.task-item__edit {
+    background-color: #f38f04; /* Light orange */
+}
+
+/* Delete Button Style (Red from your image) */
+.task-item__delete {
+    background-color: #b91a14; /* Red */
 }
