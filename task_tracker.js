@@ -23,11 +23,11 @@ function addTask() {
         return;
     }
 
-    // 1. Create the new list item structure (li, checkbox, span, buttons)
+    // 1. Create the new list item structure (
     const li = document.createElement('li');
     li.className = 'task-item';
     
-    // Set the inner HTML of the list item (this is often the easiest way for complex elements)
+    // Set the inner HTML of the list item 
     li.innerHTML = `
         <input type="checkbox" class="task-item__checkbox" onclick="toggleComplete(this)">
         <span class="task-item__text">${taskText}</span>
@@ -51,10 +51,9 @@ function toggleComplete(checkbox) {
     const taskItem = checkbox.closest('.task-item');
 
     // 2. Toggle the 'completed' class on the <li>
-    // The CSS uses this class to apply the strike-through and grey color
     taskItem.classList.toggle('completed');
 
-    // 3. Ensure the checkbox state matches (in case it was clicked via the 'Complete' button)
+    // 3. Ensure the checkbox state matches 
     checkbox.checked = taskItem.classList.contains('completed');
 }
 

@@ -1,7 +1,7 @@
 /* --- Basic Setup --- */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(226, 226, 238);
+    background-color: rgb(180, 226, 240);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background-color: rgb(194, 182, 206);
+    background-color: rgb(102, 158, 223);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,7 @@ body {
 
 
 .header-title {
-    color: blueviolet; 
+    color: rgb(10, 10, 10);
     text-align: center;
     margin-bottom: 25px;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 #add-button:hover {
-    background-color: #6a1ba0;
+    background-color: #4f90cc;
 }
 
 /* --- Task List Styles --- */
@@ -84,12 +84,11 @@ body {
 }
 
 .task-item__checkbox {
-    /* Style the checkbox here if needed, or rely on browser default */
-    cursor: pointer;
-    transform: scale(1.2);
+     cursor: pointer;
+    transform: scale(1.0);
 }
 
-/* --- Buttons (Matching your image styles) --- */
+/* --- Buttons--- */
 .task-item__buttons {
     display: flex;
     gap: 5px;
@@ -114,12 +113,12 @@ body {
     background-color: #057c05; 
 }
 
-/* Edit Button Style (Orange/Amber from your image) */
+/* Edit Button Style */
 .task-item__edit {
-    background-color: #f38f04; /* Light orange */
+    background-color: #f38f04;
 }
 
-/* Delete Button Style (Red from your image) */
+/* Delete Button Style */
 .task-item__delete {
     background-color: #b91a14; /* Red */
 }
